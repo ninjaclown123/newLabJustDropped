@@ -16,7 +16,8 @@ class EMS:
 
     def show_employees(self):
         for i in self.data:
-            print(i)
+            print(i.name,i.id,i.age,i.department)
+        
 
     def delete_employee(self,id):
         found = None
