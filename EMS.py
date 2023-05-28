@@ -17,6 +17,15 @@ class EMS:
     def show_employees(self):
         for i in self.data:
             print(i.name,i.id,i.age,i.department)
+
+    def get_employee(self,id):
+        found = None
+        for i in range(len(self.data)):
+            if self.data[i].id == id:
+                found = self.data[i]
+                return found
+            
+        raise Exception("Employee does not exist.")
         
 
     def delete_employee(self,id):
