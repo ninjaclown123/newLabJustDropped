@@ -23,6 +23,28 @@ class TestEMS(unittest.TestCase):
 
         self.assertEqual(expected_output,output)
 
+    def test_get(self):
+        ems = EMS()
+        ems.add_emp(Employee("Peter Parker",23,69,"WebSlinger"))
+        ems.add_emp(Employee("Kraven",36,70,"Hunter"))
+        ems.add_emp(Employee("Miles Morales",19,71,"WebSlinger Intern"))
+
+        emp = ems.get_employee(69)
+
+        self.assertEqual(emp.name,"Peter Parker")
+    
+    def test_get_non_existing(self):
+        ems = EMS()
+        ems.add_emp(Employee("Peter Parker",23,69,"WebSlinger"))
+        ems.add_emp(Employee("Kraven",36,70,"Hunter"))
+        ems.add_emp(Employee("Miles Morales",19,71,"WebSlinger Intern"))
+
+
+        with self.assertRaises(Exception):
+            ems.get_employee(68)
+            
+
+
     def test_delete(self):
         ems = EMS()
         emp1 = Employee("Peter Parker",23,69,"WebSlinger")
@@ -50,6 +72,8 @@ class TestEMS(unittest.TestCase):
         with self.assertRaises(Exception):
             ems.delete_employee(68)
 
+
+    
 
     
     def get_output_string(self, func):
