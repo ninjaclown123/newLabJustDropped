@@ -25,7 +25,12 @@ class EMS:
             if self.data[i].id == id:
                 found = id
                 del self.data[i]
-                print(str(found) + ' was found and deleted.')
+                print('employee ' + str(found) + ' was found and deleted.')
                 return True
+        
+        raise Exception("Employee Not Found")
+
             
-        return False
+        
+
+
