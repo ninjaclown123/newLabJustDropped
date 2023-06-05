@@ -11,7 +11,8 @@ class EMS:
         self.data = []
 
     def add_emp(self,employee):
-        self.data.append(employee)
+        # self.data.append(employee)
+        return None
 
 
     def show_employees(self):
